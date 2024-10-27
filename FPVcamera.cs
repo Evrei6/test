@@ -6,14 +6,15 @@ public class CameraController : MonoBehaviour
     public float trackingSpeed = 5f; // Скорость поворота камеры
     public bool isTracking = false; // Флаг активации слежения
     public float raycastDistance = 10f; // Расстояние для луча
+    public string controlKey = "space"; // Строка для названия клавиши
 
     private float xRotation = 0f;
     private Vector3 targetPoint; // Точка, на которую камера смотрит
 
     void Update()
     {
-        // Проверка нажатия пробела
-        if (Input.GetKeyDown(KeyCode.Space))
+        // Проверка нажатия заданной кнопки
+        if (Input.GetKeyDown(controlKey))
         {
             // Обновление точки на поверхности
             RaycastHit hit;
